@@ -6,4 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  currentPage: string = 'Recipes';
+
+  onNavClicked(page) {
+    if (this.currentPage !== page) {
+      this.currentPage = page;
+    }
+  }
 }
