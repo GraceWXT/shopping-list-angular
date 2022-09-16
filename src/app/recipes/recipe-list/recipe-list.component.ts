@@ -19,13 +19,13 @@ export class RecipeListComponent implements OnInit {
       'https://cdn.pixabay.com/photo/2020/02/02/15/07/meat-4813261_1280.jpg'
     )
   ];
-  @Output() recipeSelected = new EventEmitter<Recipe>();
+  @Output('recipeSelected') recipeWasSelected = new EventEmitter<Recipe>();
 
   constructor() {}
 
   ngOnInit(): void {}
 
   onRecipeSelected(recipe) {
-    this.recipeSelected.emit(recipe);
+    this.recipeWasSelected.emit(recipe);
   }
 }
