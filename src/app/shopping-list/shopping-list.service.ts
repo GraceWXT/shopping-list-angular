@@ -18,4 +18,11 @@ export class ShoppingListService {
     console.log('ingredients', this.ingredients);
     this.shoppingListUpdated.emit(this.ingredients.slice());
   }
+
+  addIngredients(ingredients: Ingredient[]) {
+    // this.ingredients = [...this.ingredients, ...ingredients];
+    this.ingredients.push(...ingredients);
+    console.log('this.ingredients', this.ingredients);
+    this.shoppingListUpdated.emit(this.ingredients.slice());
+  }
 }
