@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EditRecipeComponent } from './recipes/edit-recipe/edit-recipe.component';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { RecipeHomeComponent } from './recipes/recipe-home/recipe-home.component';
 
@@ -13,7 +14,10 @@ const routes: Routes = [
     component: RecipesComponent,
     children: [
       { path: '', component: RecipeHomeComponent, pathMatch: 'full' },
-      { path: ':id', component: RecipeDetailComponent }
+      // "new" is more specific and needs to go before the dynamic ":id"
+      { path: 'new', component: EditRecipeComponent },
+      { path: ':id', component: RecipeDetailComponent },
+      { path: ':id/edit', component: EditRecipeComponent }
     ]
   },
   { path: 'shopping-list', component: ShoppingListComponent }
