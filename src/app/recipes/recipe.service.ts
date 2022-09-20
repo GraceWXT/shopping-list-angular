@@ -24,6 +24,10 @@ export class RecipeService {
 
   constructor(private shoppingListService: ShoppingListService) {}
 
+  getRecipe(index: number) {
+    return this.recipes[index];
+  }
+
   getRecipes() {
     // Use slice to create a copy of the array to prevent access from outside
     return this.recipes.slice();
