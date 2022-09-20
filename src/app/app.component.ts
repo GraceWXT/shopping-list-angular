@@ -5,12 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  currentPage: string = 'Recipes';
-
-  onNavClicked(page) {
-    if (this.currentPage !== page) {
-      this.currentPage = page;
-    }
-  }
-}
+export class AppComponent {}
